@@ -1,0 +1,1 @@
+export const urlBase="https://api.themoviedb.org/3/";
