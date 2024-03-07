@@ -1,10 +1,8 @@
 import {getTrending,getTrendingMovies,searchPerson} from "./api/trendingGetters.js";
-import { urlBase } from "./api/config.js";
+import { URL_BASE } from "./api/config.js";
 
-getTrending(urlBase);
+getTrending(URL_BASE);
 
-getTrendingMovies(urlBase);
+getTrendingMovies(URL_BASE);
 
-searchPerson(urlBase);
-
-
+searchPerson(URL_BASE);
