@@ -13,6 +13,7 @@ export const getTrending = async (baseUrl) => {
 }
 
 
+
 /**getTrendingMovies
  * 
  * @param urlBase
@@ -47,3 +48,5 @@ export const searchPerson = async (baseUrl) => {
     return data;
 
 }
+
+
