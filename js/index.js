@@ -15,12 +15,20 @@ getTrending(URL_BASE)
     data.results.forEach((element) => {
         switch(element.media_type){
             case "movie":
+                console.log("\n FILM: \n");
         let titolo=element.title;
         console.log("titolo: "+titolo);
+
+        let release_date=element.release_date;
+        console.log("release date:"+release_date);
         break;
             case "tv":
+                console.log("\n SERIE TV: \n");
         let nome=element.name;
                 console.log("nome: "+nome);
+
+        let firstAirDate=element.first_air_date;
+                console.log(firstAirDate);
                 break;
         }
         let id=element.id;
@@ -32,8 +40,6 @@ getTrending(URL_BASE)
         let media_type=element.media_type;
         console.log("media type: "+media_type);
 
-        let release_date=element.release_date;
-        console.log("release date:"+release_date);
         
     });
 });
