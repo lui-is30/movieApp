@@ -2,8 +2,9 @@ import { getTrending, getTrendingMovies, searchPerson } from "./api/trendingGett
 import { URL_BASE } from "./api/config.js";
 
 export{fixTitle,addParagraph} from"../utils/dom.js";
-export{getTrendingMovies} from "./api/trendingGetters.js";
+export{getTrendingMovies,getTrending} from "./api/trendingGetters.js";
 export{ URL_BASE } from "./api/config.js";
+export{createMovieTitleList,createMovieView} from "./domManipulator/createList.js"
 
 /**
  * poster_path
@@ -13,7 +14,7 @@ export{ URL_BASE } from "./api/config.js";
  * release_date
  * id
  */
-/*
+
 getTrending(URL_BASE)
     .then((data) => {
         data.results.forEach((element) => {
@@ -47,7 +48,7 @@ getTrending(URL_BASE)
 
         });
     });
-*/
+
 getTrendingMovies(URL_BASE);
 
 

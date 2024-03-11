@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        
+        /* Intestazione */
+        header {
+            background-color: #111;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        /* Contenitore dei film */
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        /* Singolo film */
+        .movie {
+            width: 200px;
+            margin: 20px;
+        }
+        
+        .movie img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .movie h2 {
+            margin: 10px 0 5px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Intestazione -->
+    <header>
+        <h1>Movie App</h1>
+    </header>
+
+    <!-- Contenuto -->
+    <div class="movie-container">
+        <!-- Singolo film -->
+        <div class="movie">
+            <img src="placeholder.jpg" alt="Film 1">
+            <h2>Film 1</h2>
+        </div>
+        
+        <div class="movie">
+            <img src="placeholder.jpg" alt="Film 2">
+            <h2>Film 2</h2>
+        </div>
+        
+        <div class="movie">
+            <img src="placeholder.jpg" alt="Film 3">
+            <h2>Film 3</h2>
+        </div>
+
+        <!-- Aggiungi altri film qui -->
+    </div>
+</body>
+</html>
