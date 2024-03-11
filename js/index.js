@@ -1,6 +1,9 @@
-import {getTrending,getTrendingMovies,searchPerson} from "./api/trendingGetters.js";
+import { getTrending, getTrendingMovies, searchPerson } from "./api/trendingGetters.js";
 import { URL_BASE } from "./api/config.js";
-import { configDotenv } from "dotenv";
+
+export{fixTitle,addParagraph} from"../utils/dom.js";
+export{getTrendingMovies} from "./api/trendingGetters.js";
+export{ URL_BASE } from "./api/config.js";
 
 /**
  * poster_path
@@ -10,41 +13,43 @@ import { configDotenv } from "dotenv";
  * release_date
  * id
  */
+/*
 getTrending(URL_BASE)
-.then((data)=>{
-    data.results.forEach((element) => {
-        switch(element.media_type){
-            case "movie":
-                console.log("\n FILM: \n");
-        let titolo=element.title;
-        console.log("titolo: "+titolo);
+    .then((data) => {
+        data.results.forEach((element) => {
+            switch (element.media_type) {
+                case "movie":
+                    console.log("\n FILM: \n");
+                    let titolo = element.title;
+                    console.log("titolo: " + titolo);
 
-        let release_date=element.release_date;
-        console.log("release date:"+release_date);
-        break;
-            case "tv":
-                console.log("\n SERIE TV: \n");
-        let nome=element.name;
-                console.log("nome: "+nome);
+                    let release_date = element.release_date;
+                    console.log("release date:" + release_date);
+                    break;
+                case "tv":
+                    console.log("\n SERIE TV: \n");
+                    let nome = element.name;
+                    console.log("nome: " + nome);
 
-        let firstAirDate=element.first_air_date;
-                console.log(firstAirDate);
-                break;
-        }
-        let id=element.id;
-        console.log("id:"+id);
+                    let firstAirDate = element.first_air_date;
+                    console.log(firstAirDate);
+                    break;
+            }
+            let id = element.id;
+            console.log("id:" + id);
 
-        let poster_path=element.poster_path;
-        console.log("poster path:"+poster_path);
+            let poster_path = element.poster_path;
+            console.log("poster path:" + poster_path);
 
-        let media_type=element.media_type;
-        console.log("media type: "+media_type);
+            let media_type = element.media_type;
+            console.log("media type: " + media_type);
 
-        
+
+        });
     });
-});
-
+*/
 getTrendingMovies(URL_BASE);
+
 
 searchPerson(URL_BASE);
 
