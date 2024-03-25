@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <h1 id="header">Movie Ap</h1>
+    <div id="navbar"><h1 id="header" style="margin-top: 0;color: red;font-size: 50px; text-align: center;">Movie Ap</h1>
+     <input id="cerca" type="text" > <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="searchButton" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+      </svg> <!--<input id="searchButton" type="button">-->
+    </div>
+    <!--
     <ul id="list">
 
     </ul>
@@ -15,24 +20,45 @@
     <ul id="list_all">
 
     </ul>
+-->
 
+    <div class="container" id="container">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="indietro" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+          </svg>
+        <!--<div id="indietro">
+    
+        </div>-->
+        <h2 id="title_movies">Trending Movies</h2>
     <div id="movies" class="card">
         
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="avanti" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+      </svg>
+    <!--<div id="avanti">
+
+    </div>-->
+</div >
+
 
 
     <script type="module">
         //import {fixTitle,addParagraph} from "./utils/dom.js";
-        import {fixTitle,addParagraph} from "./js/index.js";
+        import {fixTitle,/*addParagraph*/} from "./js/index.js";
         //import{getTrendingMovies} from "./js/api/trendingGetters.js";
-        import {getTrendingMovies,getTrending} from "./js/index.js";
+        import {getTrendingMovies,getTrending,searchPerson} from "./js/index.js";
         //import { URL_BASE } from "./js/api/config.js";
         import {URL_BASE} from "./js/index.js";
-        import {createMovieTitleList} from "./js/index.js";
-        import {createMovieView} from "./js/index.js";
+       // import {createMovieTitleList} from "./js/index.js";
+        import {createMovieView,createSearchPerson} from "./js/index.js";
 
         fixTitle();
-        addParagraph();
+        let header=document.getElementById("header");
+        header.addEventListener("click",()=>{
+            window.location.reload();
+        })
+        //addParagraph();
         getTrendingMovies(URL_BASE).then((data) => {
         //console.log(data.results);
            data.results.forEach(element => {
@@ -53,18 +79,30 @@
             console.log("media type: " + media_type);*/
 
         });
-        const ul=document.getElementById("list");
-        createMovieTitleList(data,ul);
+        /*const ul=document.getElementById("list");
+        createMovieTitleList(data,ul);*/
         createMovieView(data);
         }); 
 
         getTrending(URL_BASE)
         .then((data)=>{
             const ul=document.getElementById("list_all");
-            createMovieTitleList(data,ul);
+            //createMovieTitleList(data,ul);
         });
 
 
+        let searchButton=document.getElementById("searchButton");
+        searchButton.addEventListener("click",()=>{
+            
+        let attoreInput=document.getElementById("cerca");
+        let attore=attoreInput.value;
+        searchPerson(URL_BASE,attore)
+        .then((data)=>{
+            createSearchPerson(data,attore);
+        });
+
+    })
+        
 
         
         

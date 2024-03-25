@@ -11,10 +11,10 @@ export const fixTitle = () => {
     }
 }
 
-export const addParagraph=()=>{
+/*export const addParagraph=()=>{
     const title=document.getElementById("header");
     const paragraph= document.createElement("p");
     paragraph.innerHTML="Indiana Jones";
     title.appendChild(paragraph);
 
-}
+}*/

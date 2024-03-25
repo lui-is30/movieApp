@@ -37,9 +37,9 @@ export const getTrendingMovies = async (baseUrl) => {
  * 
  */
 
-export const searchPerson = async (baseUrl) => {
+export const searchPerson = async (baseUrl,attore) => {
 
-    let attore = "clooney";
+    //let attore = "clooney";
 
     const response = await fetch(baseUrl + "search/person" + "?query=" + attore,OPTS);
 
