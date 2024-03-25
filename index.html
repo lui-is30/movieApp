@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div id="navbar"><h1 id="header" style="margin-top: 0;color: red;font-size: 50px; text-align: center;">Movie Ap</h1>
+    <div id="navbar"><h1 id="header" style="margin-top: 0;color: red;font-size: 50px; text-align: center;cursor: pointer;">Movie Ap</h1>
      <input id="cerca" type="text" > <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="searchButton" viewBox="0 0 16 16">
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
       </svg> <!--<input id="searchButton" type="button">-->
@@ -39,6 +39,25 @@
     <!--<div id="avanti">
 
     </div>-->
+</div >
+
+
+<div class="containerTv" id="containerTv">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="indietroTv" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+      </svg>
+    
+    <h2 id="title_tv">Trending Series</h2>
+
+<div id="tv" class="tvCard">
+    
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="avantiTv" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+  </svg>
+
 </div >
 
 
@@ -93,7 +112,7 @@
 
         let searchButton=document.getElementById("searchButton");
         searchButton.addEventListener("click",()=>{
-            
+        
         let attoreInput=document.getElementById("cerca");
         let attore=attoreInput.value;
         searchPerson(URL_BASE,attore)

@@ -54,13 +54,12 @@ export const createMovieView=(data)=>{
         description.innerHTML=element.overview;
         description.classList.add("description");
 
-        const container=document.getElementById("container");
-        const avanti=document.getElementById("avanti");
+        const container=document.getElementById("containerTv");
+        const avanti=document.getElementById("avantiTv");
         let position=0;
         movie.style.transition="transform 1s ease";
         let index=0;
-        const indietro=document.getElementById("indietro");
-        let positionBack=0;
+        const indietro=document.getElementById("indietroTv");
         indietro.addEventListener("click",()=>{
             if(index>=0){
                 index--;
@@ -72,7 +71,7 @@ export const createMovieView=(data)=>{
         })
         avanti.addEventListener("click",()=>{
             /*position+=100;*/
-            //if(position<movie.offsetWidth*2){
+            //if(position<movie.offsetWidth*2){ 
             if(index<3){
             index++;
             position+=(image.offsetWidth+2)*5;
@@ -83,22 +82,21 @@ export const createMovieView=(data)=>{
 
 
         let body=document.body;
-        body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${data.results[0].poster_path})`;
-        body.style.backgroundPosition="center";
+        //body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${data.results[0].poster_path})`;
         image.addEventListener("mouseover",()=>{
-            body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${element.poster_path})`;
+            //body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${element.poster_path})`;
+            body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${element.backdrop_path})`;
             body.style.backgroundSize="cover";
             body.style.backgroundPosition="center";
         })
        
-        image.addEventListener("mouseout",()=>{
-            body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${data.results[0].poster_path})`;
-        })
-
+        /*image.addEventListener("mouseout",()=>{
+            body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${data.results[0].backdrop_path})`;
+        })*/
 
         textContainer.appendChild(title);
         divTitle.appendChild(textContainer);
-        /*textContainer.appendChild(description);*/
+        /*textContainer.appendChild(description);*/   
         textContainer.appendChild(description);
         //card.appendChild(textContainer);
         card.appendChild(divTitle);
@@ -179,5 +177,100 @@ export const createSearchPerson=(data,attore)=>{
     movie.appendChild(containerAllActor);
     console.log(data);
 }
+
+
+
+export const createTvView=(data)=>{
+    console.log("SERIE TV:");
+    console.log(data);/*QUA
+    const movie=document.getElementById("tv");
+    data.results.forEach(element=>{
+        const card=document.createElement("div");
+        card.classList.add("film");
+        const textContainer=document.createElement("div");
+        const image=document.createElement("img");
+        image.src=`https://image.tmdb.org/t/p/w500${element.poster_path}`;
+        image.classList.add("imageCard");
+        const divTitle=document.createElement("div");
+        divTitle.classList.add("titleMovie");
+        image.addEventListener("click",()=>{
+            if(divTitle.style.display==="none"||divTitle.style.display===""){
+               divTitle.style.display="block";
+               image.style.opacity=0;
+               image.style.transition="opacity 1s ease,filter 1s ease";
+               image.style.filter="blur(10px)";
+               /*image.style.transform="scale(0.1)";*/ /*QUA
+             }
+            else{
+                divTitle.style.display="none";
+            image.style.opacity=1;
+            image.style.filter="none";
+            }
+        })
+        /*const divTitle=document.createElement("div");
+        divTitle.classList.add("titleMovie");*/   /*QUA
+        const title=document.createElement("h1");
+        title.innerHTML=element.title;
+        title.classList.add("titleMovieWritten");
+        const description=document.createElement("p");
+        description.innerHTML=element.overview;
+        description.classList.add("description");
+
+        const container=document.getElementById("container");
+        const avanti=document.getElementById("avanti");
+        let position=0;
+        movie.style.transition="transform 1s ease";
+        let index=0;
+        const indietro=document.getElementById("indietro");
+        let positionBack=0;
+        indietro.addEventListener("click",()=>{
+            if(index>=0){
+                index--;
+                //position-=(image.offsetWidth+2)*5;
+                position=position-((image.offsetWidth+2)*5);
+                //position=Math.max(positionBack,0);
+                movie.style.transform=`translateX(-${position}px)`;
+            }
+        })
+        avanti.addEventListener("click",()=>{
+            /*position+=100;*/  
+            //if(position<movie.offsetWidth*2){
+       /*QUA     if(index<3){
+            index++;
+            position+=(image.offsetWidth+2)*5;
+            movie.style.transform=`translateX(-${position}px)`;
+            }
+            //}
+        })
+
+
+        let body=document.body;
+        //body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${data.results[0].poster_path})`;
+        body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${data.results[0].backdrop_path})`;
+        body.style.backgroundPosition="center";
+        image.addEventListener("mouseover",()=>{
+            //body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${element.poster_path})`;
+            body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${element.backdrop_path})`;
+            body.style.backgroundSize="cover";
+            body.style.backgroundPosition="center";
+        })
+       
+        image.addEventListener("mouseout",()=>{
+            body.style.backgroundImage=`url(https://image.tmdb.org/t/p/w500${data.results[0].backdrop_path})`;
+        })
+
+
+        textContainer.appendChild(title);
+        divTitle.appendChild(textContainer);
+        /*textContainer.appendChild(description);*/     /*QUA     
+        textContainer.appendChild(description);
+        //card.appendChild(textContainer);
+        card.appendChild(divTitle);
+        card.appendChild(image);
+        movie.appendChild(card);  
+
+    })QUA*/
+}
+
 
 

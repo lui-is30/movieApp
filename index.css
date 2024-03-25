@@ -174,7 +174,7 @@ body::before {
     color: white;
     width: 20px;
     height: 20px;
-    
+    cursor: pointer;
 }
 
 /*
@@ -183,6 +183,45 @@ body::before {
     height: 20px;
     background-color: white;
 }*/
+
+.containerTv{
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+
+#title_tv{
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.tvCard{
+    display: flex;
+    position: relative;
+}
+
+#indietroTv {
+    width: 40px;
+    height: 40px;
+    color: white;
+    z-index: 4;
+    position: absolute;
+    left: 10px;
+    top: 300px;
+    opacity: 0.2;
+}
+
+#avantiTv{
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 100%;
+    z-index: 4;
+    position: absolute;
+    right: 10px;
+    top: 300px;
+    opacity: 0.2;
+}
+
 body{
     /*background-color: black;*/
     margin: 0;
