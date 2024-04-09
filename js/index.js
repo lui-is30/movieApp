@@ -1,10 +1,11 @@
-import { getTrending, getTrendingMovies, searchPerson } from "./api/trendingGetters.js";
+import { getTrending, getTrendingMovies, searchPerson,getTrendingTv } from "./api/trendingGetters.js";
 import { URL_BASE } from "./api/config.js";
+
 
 export{fixTitle,/*addParagraph*/} from"../utils/dom.js";
 export{getTrendingMovies,getTrending,searchPerson} from "./api/trendingGetters.js";
 export{ URL_BASE } from "./api/config.js";
-export{/*createMovieTitleList,*/createMovieView,createSearchPerson} from "./domManipulator/createList.js"
+export{/*createMovieTitleList,*/createMovieView,createSearchPerson,createTvView} from "./domManipulator/createList.js"
 
 /**
  * poster_path

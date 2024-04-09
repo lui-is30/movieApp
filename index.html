@@ -22,6 +22,7 @@
     </ul>
 -->
 
+<br><br><br><br>
     <div class="container" id="container">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="indietro" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
@@ -41,25 +42,24 @@
     </div>-->
 </div >
 
-
 <div class="containerTv" id="containerTv">
-    
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="indietroTv" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
       </svg>
-    
-    <h2 id="title_tv">Trending Series</h2>
+    <!--<div id="indietro">
 
-<div id="tv" class="tvCard">
+    </div>-->
+    <h2 id="title_tv">Trending Series</h2>
+<div id="tvCard" class="tvCard">
     
 </div>
-
 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="avantiTv" viewBox="0 0 16 16">
     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
   </svg>
+<!--<div id="avanti">
 
+</div>-->
 </div >
-
 
 
     <script type="module">
@@ -67,10 +67,15 @@
         import {fixTitle,/*addParagraph*/} from "./js/index.js";
         //import{getTrendingMovies} from "./js/api/trendingGetters.js";
         import {getTrendingMovies,getTrending,searchPerson} from "./js/index.js";
+        import { searchMovie} from "./js/api/trendingGetters.js";
         //import { URL_BASE } from "./js/api/config.js";
         import {URL_BASE} from "./js/index.js";
        // import {createMovieTitleList} from "./js/index.js";
-        import {createMovieView,createSearchPerson} from "./js/index.js";
+        import {createMovieView,createSearchPerson,createTvView} from "./js/index.js";
+
+        import {getTrendingTv} from "./js/api/trendingGetters.js";
+
+        import {createSearchMovie} from "./js/domManipulator/createList.js";
 
         fixTitle();
         let header=document.getElementById("header");
@@ -118,9 +123,24 @@
         searchPerson(URL_BASE,attore)
         .then((data)=>{
             createSearchPerson(data,attore);
+            /*searchMovie(URL_BASE,attore)
+                .then((dataMovie)=>{
+                        createSearchMovie(dataMovie,attore);
+                });*/
+            
         });
 
+        searchMovie(URL_BASE,attore)
+                .then((dataMovie)=>{
+                        createSearchMovie(dataMovie,attore);
+                });
+
     })
+
+    getTrendingTv(URL_BASE)
+    .then((data)=>{
+        createTvView(data);
+    });
         
 
         

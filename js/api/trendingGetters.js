@@ -49,4 +49,18 @@ export const searchPerson = async (baseUrl,attore) => {
 
 }
 
+export const getTrendingTv=async(baseUrl)=>{
+    const response=await fetch("https://api.themoviedb.org/3/trending/tv/day?language=en-US",OPTS);
+    const data=await response.json();
+    return data;
+}
+
+
+export const searchMovie=async(baseUrl,nameMovie)=>{
+    const response=await fetch("https://api.themoviedb.org/3/search/movie?query="+nameMovie,OPTS);
+    const data=await response.json();
+    return data;
+}
+
+
 

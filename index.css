@@ -4,6 +4,8 @@
     height: 70px;
     width: 100%;
     margin-top: 0;
+    position: fixed;
+    z-index: 3;
 }
 
 .container{
@@ -132,6 +134,7 @@ body::before {
     height: 20px;
     width: 200px;
     margin-left: 800px;
+    border-radius: 10px;
 }
 #header{
     margin-left: 8%;
@@ -153,6 +156,7 @@ body::before {
 .nameActor{
     width: 300px;
     height: 100px;
+    text-align: center;
 }
 
 .containerActor{
@@ -206,8 +210,14 @@ body::before {
     z-index: 4;
     position: absolute;
     left: 10px;
-    top: 300px;
+    top: 800px;
     opacity: 0.2;
+}
+
+#indietroTv:hover{
+    opacity: 1;
+    cursor: pointer;
+    color: black;
 }
 
 #avantiTv{
@@ -218,11 +228,21 @@ body::before {
     z-index: 4;
     position: absolute;
     right: 10px;
-    top: 300px;
+    top: 800px;
     opacity: 0.2;
+}
+
+#avantiTv:hover{
+    opacity: 1;
+    cursor: pointer;
+    color: black;
 }
 
 body{
     /*background-color: black;*/
     margin: 0;
+}
+
+body::-webkit-scrollbar{
+    display: none;
 }
